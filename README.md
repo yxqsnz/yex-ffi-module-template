@@ -2,10 +2,8 @@
 
 # Building
  `cargo build`
-
+# Requirements
+ - [Rust](https://rust-lang.org)
+ - [Yex](https://github.com/nonamescm/yex-lang#instalation)
 # How to use?
- You need to install yex from master branch.
- `cargo install --git https://github.com/nonamescm/yex-lang.git`
- 
- And run the file with yex!
  `yex main.yex`
