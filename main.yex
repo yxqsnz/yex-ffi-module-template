@@ -1,0 +1,17 @@
+// Frist we need to import FFI Module file
+let mylib = match FFI.open "./target/debug/libyex_ffi_module_template.so"
+				  with // unwrap inner value
+				  		| Result.ok val -> val
+						| Result.fail error -> raise :FFIError error
+// Import type `Console from mylib`
+let Console = FFI.get :Console mylib
+// Has same syntax for functions
+let simple_fn = FFI.get :simple_fn mylib
+
+// Main expression
+let _ =
+	let name = simple_fn "yxqsnz" // simple_fn returns a string
+	in Console.printName name 	   // Console.printName receives a string as argument
+
+// Expected Output
+// Hello, yxqsnz!
